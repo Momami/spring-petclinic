@@ -4,11 +4,7 @@
     stages {
             stage("Build and start test image") {
              agent {
-                docker { 
-                    image 'maven'
-                    label 'master'  
-                    args '-u root'
-                 }
+                label "linux-slave1"
             }
                 steps {
                     sh "cd data"
