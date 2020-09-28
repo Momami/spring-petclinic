@@ -1,11 +1,9 @@
  pipeline {
-    agent none
+    agent any
 
     stages {
             stage("Build and start test image") {
-             agent {
-                label "linux-slave1"
-            }
+             
                 steps {
                     sh "cd data"
                     sh "docker-compose build"
