@@ -3,6 +3,13 @@
 
     stages {
             stage("Build and start test image") {
+             agent {
+                docker { 
+                    image 'maven'
+                    label 'master'  
+                    args '-u root'
+                 }
+            }
                 steps {
                     sh "cd data"
                     sh "docker-composer build"
