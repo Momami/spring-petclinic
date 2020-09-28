@@ -12,7 +12,7 @@
             }
                 steps {
                     sh "cd data"
-                    sh "docker-composer build"
+                    sh "docker-compose build"
                     sh "docker-compose up -d"
                 }
             }
