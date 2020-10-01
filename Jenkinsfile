@@ -14,6 +14,13 @@
                 sh 'mvn clean package'
             }
          }
+         stage("Build image") {
+             steps {
+                 sh "cd target"
+                 sh "docker build ."
+             }
+         }
+
     }
  }
 
